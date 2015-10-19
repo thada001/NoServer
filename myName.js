@@ -1,1 +1,1 @@
-Thomas Adair
+var name = Thomas Adair;
