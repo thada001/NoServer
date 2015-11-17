@@ -1,0 +1,30 @@
+<a ui-sref='table'>Back to Table</a>
+<h1>{{teamData.name}}</h1>
+<img src='{{teamData.crestUrl}}' alt="{{teamData.name}} Crest" />
+<h2>Squad</h2>
+<h3>Current Squad Worth: {{teamData.squadMarketValue}}</h3>
+<table>
+  <tr>
+    <td>Jersey Number</td>
+    <td>Name</td>
+    <td>Position</td>
+    <td>Age</td>
+    <td>Nationality</td>
+    <td>Contract End</td>
+    <td>Value</td>
+  </tr>
+  <tr ng-repeat='player in players'>
+    <td>{{player.jerseyNumber}}</td>
+    <td><a ui-sref='player({jerseyNumber: player.jerseyNumber})'>{{player.name}}</a></td>
+    <td>{{player.position}}</td>
+    <td>{{player.age}}</td>
+    <td>{{player.nationality}}</td>
+    <td>{{player.contractUntil}}</td>
+    <td>{{player.marketValue}}</td>
+  </tr>
+</table>
+<h2>Fixtures</h2>
+<div ng-repeat='fixture in fixtures'>
+  <p>{{fixture.date | date:'medium'}}</p>
+  <p>{{fixture.homeTeamName}} {{fixture.result.goalsHomeTeam}} : {{fixture.result.goalsAwayTeam}} {{fixture.awayTeamName}}</p>
+</div>

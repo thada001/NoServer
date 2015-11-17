@@ -1,0 +1,28 @@
+<div class="table-container">
+  <table>
+    <tr id='labels'>
+      <td></td>
+      <td>Team</td>
+      <td>MP</td>
+      <td>W</td>
+      <td>D</td>
+      <td>L</td>
+      <td>GA</td>
+      <td>GF</td>
+      <td>GD</td>
+      <td>Pts</td>
+    </tr>
+    <tr ng-repeat='team in teams'>
+      <td>{{team.position}}</td>
+      <td><a ui-sref='team({teamId: team.id})'>{{team.teamName}}</a></td>
+      <td>{{team.playedGames}}</td>
+      <td>{{team.wins}}</td>
+      <td>{{team.draws}}</td>
+      <td>{{team.losses}}</td>
+      <td>{{team.goalsAgainst}}</td>
+      <td>{{team.goals}}</td>
+      <td>{{team.goalDifference}}</td>
+      <td>{{team.points}}</td>
+    </tr>
+  </table>
+</div>
