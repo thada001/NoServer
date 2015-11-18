@@ -1,4 +1,4 @@
-angular.module('eplApp').controller('playerCtrl', function($scope, playerService) {
-  $scope.player = playerInfo;
-  console.log($scope.player);
+angular.module('eplApp').controller('playerCtrl', function($scope, playerService, playerInfo) {
+  $scope.playerInfo = playerInfo;
+  console.log($scope.playerInfo);
 })

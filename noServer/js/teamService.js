@@ -1,10 +1,14 @@
-angular.module('eplApp').service('teamService', function($http, $q, fdata, playerService) {
+angular.module('eplApp').factory('teamService', function($http, $q, fdata) {
   var team;
   function setTeam(id) {
     team = id;
   }
 
-  this.getTeam = function(id) {
+  var service = {};
+  service.getSelectedTeam = function() {
+    return team;
+  }
+  service.getTeam = function(id) {
     setTeam(id);
     return $http({
       headers: {'X-Auth-Token': 'd69db8b392004af18d5b09fce1dba987'},
@@ -13,7 +17,7 @@ angular.module('eplApp').service('teamService', function($http, $q, fdata, playe
     })
   };
 
-  this.getPlayers = function(id) {
+  service.getPlayers = function(id) {
     var dfd = $q.defer();
     $http({
       headers: {'X-Auth-Token': 'd69db8b392004af18d5b09fce1dba987'},
@@ -22,7 +26,7 @@ angular.module('eplApp').service('teamService', function($http, $q, fdata, playe
     }).then(function(res) {
       console.log(res);
       var result = res.data.players;
-      playerService.setTeam(id);
+      setTeam(id);
       for (var i = 0; i <result.length; i++) {
         var today = new Date();
         var dob = Date.parse(result[i].dateOfBirth);
@@ -44,8 +48,7 @@ angular.module('eplApp').service('teamService', function($http, $q, fdata, playe
     return dfd.promise;
   }
 
-
-  this.getFixtures = function(id) {
+  service.getFixtures = function(id) {
     var dfd2 = $q.defer();
     $http({
       headers: {'X-Auth-Token': 'd69db8b392004af18d5b09fce1dba987'},
@@ -63,4 +66,5 @@ angular.module('eplApp').service('teamService', function($http, $q, fdata, playe
     })
     return dfd2.promise;
   };
+  return service;
 })

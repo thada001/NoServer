@@ -2,7 +2,7 @@ angular.module('eplApp').controller('teamCtrl', function($scope, teamService, te
   $scope.teamData = teamData.data;
   $scope.players = playerData;
   $scope.fixtures = fixtureData;
-  console.log($scope.teamData);
-  console.log($scope.players);
-  console.log($scope.fixtures);
+  // console.log($scope.teamData);
+  // console.log($scope.players);
+  // console.log($scope.fixtures);
 })
