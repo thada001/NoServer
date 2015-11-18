@@ -1,0 +1,77 @@
+.tableBody {
+  background-color: rgba(50, 40, 40, 0.8);
+  color: #fcf3a1;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  text-decoration: none;
+  font-size: large;
+  height: 650px;
+  width: 60%;
+  overflow: scroll;
+  display: inline-block;
+}
+.tableBody>h2 {
+  color: #00a9ff;
+}
+body {
+  background-image: url(http://i.imgur.com/d9MOxNw.jpg?1);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.fixtureList {
+  background-color: rgba(40, 40, 50, 0.9);
+  color: #c16262;
+  display: inline-block;
+  height: 650px;
+  width: 20%;
+  float: right;
+  overflow: scroll;
+  text-align: center;
+}
+#tableHead {
+  text-align: center;
+}
+a {
+  color: #00a9ff;
+}
+#labels {
+  color: #969191;
+}
+button {
+-moz-box-shadow:inset 0px 39px 0px -24px #e67a73;
+-webkit-box-shadow:inset 0px 39px 0px -24px #e67a73;
+box-shadow:inset 0px 39px 0px -24px #e67a73;
+background-color:#e4685d;
+border:1px solid #ffffff;
+display:inline-block;
+cursor:pointer;
+color:#ffffff;
+font-family:Arial;
+font-size:15px;
+padding:6px 15px;
+text-decoration:none;
+text-shadow:0px 1px 0px #b23e35;
+}
+button:hover {
+background-color:#eb675e;
+}
+button:active {
+position:relative;
+top:1px;
+}
+.fixcomp {
+  -moz-border-top-left-radius:20px;
+  -webkit-border-bottom-left-radius:20px;
+  border-top-left-radius:20px;
+  border-bottom-left-radius:20px;
+  margin-right: -2px;
+}
+.fixup {
+  -moz-border-top-right-radius:20px;
+  -webkit-border-bottom-right-radius:20px;
+  border-top-right-radius:20px;
+  border-bottom-right-radius:20px;
+  margin=left: -2px;
+}
+.row {
+  border: 1px grey solid;
+}

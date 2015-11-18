@@ -1,28 +1,44 @@
-<div class="table-container">
-  <table>
-    <tr id='labels'>
-      <td></td>
-      <td>Team</td>
-      <td>MP</td>
-      <td>W</td>
-      <td>D</td>
-      <td>L</td>
-      <td>GA</td>
-      <td>GF</td>
-      <td>GD</td>
-      <td>Pts</td>
-    </tr>
-    <tr ng-repeat='team in teams'>
-      <td>{{team.position}}</td>
-      <td><a ui-sref='team({teamId: team.id})'>{{team.teamName}}</a></td>
-      <td>{{team.playedGames}}</td>
-      <td>{{team.wins}}</td>
-      <td>{{team.draws}}</td>
-      <td>{{team.losses}}</td>
-      <td>{{team.goalsAgainst}}</td>
-      <td>{{team.goals}}</td>
-      <td>{{team.goalDifference}}</td>
-      <td>{{team.points}}</td>
-    </tr>
-  </table>
+<div class='tableBody'>
+  <h2 id='tableHead'>English Premier League Table</h2>
+  <div class="container-fluid">
+    <div class='row' id='labels'>
+      <div class='col-xs-1'></div>
+      <div class='col-md-2'>Team</div>
+      <div class='col-sm-1'>MP</div>
+      <div class='col-sm-1'>W</div>
+      <div class='col-sm-1'>D</div>
+      <div class='col-sm-1'>L</div>
+      <div class='col-sm-1'>GA</div>
+      <div class='col-sm-1'>GF</div>
+      <div class='col-sm-1'>GD</div>
+      <div class='col-sm-1'>Pts</div>
+    </div>
+    <div class='row' ng-repeat='team in teams'>
+      <div class='col-xs-1'>{{team.position}}</div>
+      <div class='col-md-2'><a ui-sref='team({teamId: team.id})'>{{team.teamName}}</a></div>
+      <div class='col-sm-1'>{{team.playedGames}}</div>
+      <div class='col-sm-1'>{{team.wins}}</div>
+      <div class='col-sm-1'>{{team.draws}}</div>
+      <div class='col-sm-1'>{{team.losses}}</div>
+      <div class='col-sm-1'>{{team.goalsAgainst}}</div>
+      <div class='col-sm-1'>{{team.goals}}</div>
+      <div class='col-sm-1'>{{team.goalDifference}}</div>
+      <div class='col-sm-1'>{{team.points}}</div>
+    </div>
+  </div>
+</div>
+<div class="fixtureList">
+  <h4>Fixtures</h4>
+  <div class="buttons">
+    <button class="fixcomp" ng-click="change()" ng-disabled='completed'>Completed</button>
+    <button class="fixup" ng-click="change()" ng-disabled='!completed'>Upcoming</button>
+  </div>
+  <div ng-show='completed' ng-repeat='fix in compFix'>
+    <p>{{fix.date | date:'medium'}}</p>
+    <p>{{fix.homeTeamName}} {{fix.result.goalsHomeTeam}} <br> {{fix.awayTeamName}} {{fix.result.goalsAwayTeam}} </p>
+  </div>
+  <div ng-hide='completed' ng-repeat='fix in upFix'>
+    <p>{{fix.date | date:'medium'}}</p>
+    <p>{{fix.homeTeamName}} {{fix.result.goalsHomeTeam}} <br> {{fix.awayTeamName}} {{fix.result.goalsAwayTeam}} </p>
+  </div>
 </div>
