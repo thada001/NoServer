@@ -32,16 +32,16 @@ angular.module('eplApp').factory('teamService', function($http, $q, fdata) {
         var dob = Date.parse(result[i].dateOfBirth);
         var age = Math.floor((today.getTime() - dob)/1000/60/60/24/365);
         result[i].age = age;
-        if (result[i].position === 'Keeper') result[i].position = 'GK';
-        if (result[i].position === 'Left-Back') result[i].position = 'LB';
-        if (result[i].position === 'Centre Back') result[i].position = 'CB';
-        if (result[i].position === 'Right-Back') result[i].position = 'RB';
-        if (result[i].position === 'Defensive Midfield') result[i].position = 'CDM';
-        if (result[i].position === 'Central Midfield') result[i].position = 'CM';
-        if (result[i].position === 'Attacking Midfield') result[i].position = 'CAM';
-        if (result[i].position === 'Right Wing') result[i].position = 'RW';
-        if (result[i].position === 'Left Wing') result[i].position = 'LW';
-        if (result[i].position === 'Centre Forward' || result[i].position === 'Secondary Striker') result[i].position = 'ST';
+        if (result[i].position === 'Keeper') result[i].pos = 'GK';
+        if (result[i].position === 'Left-Back') result[i].pos = 'LB';
+        if (result[i].position === 'Centre Back') result[i].pos = 'CB';
+        if (result[i].position === 'Right-Back') result[i].pos = 'RB';
+        if (result[i].position === 'Defensive Midfield') result[i].pos = 'CDM';
+        if (result[i].position === 'Central Midfield') result[i].pos = 'CM';
+        if (result[i].position === 'Attacking Midfield') result[i].pos = 'CAM';
+        if (result[i].position === 'Right Wing') result[i].pos = 'RW';
+        if (result[i].position === 'Left Wing') result[i].pos = 'LW';
+        if (result[i].position === 'Centre Forward' || result[i].pos === 'Secondary Striker') result[i].pos = 'ST';
       }
       dfd.resolve(result);
     })

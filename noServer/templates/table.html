@@ -1,44 +1,46 @@
 <div class='tableBody'>
-  <h2 id='tableHead'>English Premier League Table</h2>
-  <div class="container-fluid">
-    <div class='row' id='labels'>
-      <div class='col-xs-1'></div>
-      <div class='col-md-2'>Team</div>
-      <div class='col-sm-1'>MP</div>
-      <div class='col-sm-1'>W</div>
-      <div class='col-sm-1'>D</div>
-      <div class='col-sm-1'>L</div>
-      <div class='col-sm-1'>GA</div>
-      <div class='col-sm-1'>GF</div>
-      <div class='col-sm-1'>GD</div>
-      <div class='col-sm-1'>Pts</div>
+  <div class="tableStuff">
+    <h2 id='tableHead'>English Premier League Table</h2>
+    <div class="container-fluid">
+      <div class='row' id='labels'>
+        <div class='col-xs-1'></div>
+        <div class='col-md-2'>Team</div>
+        <div class='col-sm-1'>MP</div>
+        <div class='col-sm-1'>W</div>
+        <div class='col-sm-1'>D</div>
+        <div class='col-sm-1'>L</div>
+        <div class='col-sm-1'>GA</div>
+        <div class='col-sm-1'>GF</div>
+        <div class='col-sm-1'>GD</div>
+        <div class='col-sm-1'>Pts</div>
+      </div>
+      <div class='row' ng-repeat='team in teams'>
+        <div class='col-xs-1'>{{team.position}}</div>
+        <div class='col-md-2'><a class='teams' ui-sref='team({teamId: team.id})'>{{team.teamName}}</a></div>
+        <div class='col-sm-1'>{{team.playedGames}}</div>
+        <div class='col-sm-1'>{{team.wins}}</div>
+        <div class='col-sm-1'>{{team.draws}}</div>
+        <div class='col-sm-1'>{{team.losses}}</div>
+        <div class='col-sm-1'>{{team.goalsAgainst}}</div>
+        <div class='col-sm-1'>{{team.goals}}</div>
+        <div class='col-sm-1'>{{team.goalDifference}}</div>
+        <div class='col-sm-1'>{{team.points}}</div>
+      </div>
     </div>
-    <div class='row' ng-repeat='team in teams'>
-      <div class='col-xs-1'>{{team.position}}</div>
-      <div class='col-md-2'><a ui-sref='team({teamId: team.id})'>{{team.teamName}}</a></div>
-      <div class='col-sm-1'>{{team.playedGames}}</div>
-      <div class='col-sm-1'>{{team.wins}}</div>
-      <div class='col-sm-1'>{{team.draws}}</div>
-      <div class='col-sm-1'>{{team.losses}}</div>
-      <div class='col-sm-1'>{{team.goalsAgainst}}</div>
-      <div class='col-sm-1'>{{team.goals}}</div>
-      <div class='col-sm-1'>{{team.goalDifference}}</div>
-      <div class='col-sm-1'>{{team.points}}</div>
+  </div>
+  <div class="fixtureList">
+    <h4>Fixtures</h4>
+    <div class="buttons">
+      <button class="fixcomp" ng-click="change()" ng-disabled='completed'>Completed</button>
+      <button class="fixup" ng-click="change()" ng-disabled='!completed'>Upcoming</button>
     </div>
-  </div>
-</div>
-<div class="fixtureList">
-  <h4>Fixtures</h4>
-  <div class="buttons">
-    <button class="fixcomp" ng-click="change()" ng-disabled='completed'>Completed</button>
-    <button class="fixup" ng-click="change()" ng-disabled='!completed'>Upcoming</button>
-  </div>
-  <div ng-show='completed' ng-repeat='fix in compFix'>
-    <p style='color: white'>{{fix.date | date:'medium'}}</p>
-    <p>{{fix.homeTeamName}} <span style="color: white">{{fix.result.goalsHomeTeam}}</span> <br> {{fix.awayTeamName}} <span style="color: white">{{fix.result.goalsAwayTeam}}</span> </p>
-  </div>
-  <div ng-hide='completed' ng-repeat='fix in upFix'>
-    <p style='color: white'>{{fix.date | date:'medium'}}</p>
-    <p>{{fix.homeTeamName}} <br> Vs. <br> {{fix.awayTeamName}} </p>
+    <div ng-show='completed' ng-repeat='fix in compFix'>
+      <p style='color: white'>{{fix.date | date:'medium'}}</p>
+      <p>{{fix.homeTeamName}} <span style="color: white">{{fix.result.goalsHomeTeam}}</span> <br> {{fix.awayTeamName}} <span style="color: white">{{fix.result.goalsAwayTeam}}</span> </p>
+    </div>
+    <div ng-hide='completed' ng-repeat='fix in upFix'>
+      <p style='color: white'>{{fix.date | date:'medium'}}</p>
+      <p>{{fix.homeTeamName}} <br> Vs. <br> {{fix.awayTeamName}} </p>
+    </div>
   </div>
 </div>
