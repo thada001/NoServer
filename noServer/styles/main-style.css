@@ -1,10 +1,11 @@
 .tableBody {
-  background-color: rgba(50, 40, 40, 0.8);
+  background-color: rgba(30, 30, 30, 0.7);
   color: #fcf3a1;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   text-decoration: none;
   font-size: large;
-  height: 650px;
+  height: 100%;
+  max-height: 700px;
   width: 60%;
   overflow: scroll;
   display: inline-block;
@@ -21,7 +22,8 @@ body {
   background-color: rgba(40, 40, 50, 0.9);
   color: #c16262;
   display: inline-block;
-  height: 650px;
+  height: 100%;
+  max-height: 650px;
   width: 20%;
   float: right;
   overflow: scroll;
@@ -74,4 +76,11 @@ top:1px;
 }
 .row {
   border: 1px grey solid;
+}
+.fixtureList>div {
+  margin: 25px auto;
+}
+.crest {
+  width: 100px;
+  height: 100px;
 }

@@ -34,11 +34,11 @@
     <button class="fixup" ng-click="change()" ng-disabled='!completed'>Upcoming</button>
   </div>
   <div ng-show='completed' ng-repeat='fix in compFix'>
-    <p>{{fix.date | date:'medium'}}</p>
-    <p>{{fix.homeTeamName}} {{fix.result.goalsHomeTeam}} <br> {{fix.awayTeamName}} {{fix.result.goalsAwayTeam}} </p>
+    <p style='color: white'>{{fix.date | date:'medium'}}</p>
+    <p>{{fix.homeTeamName}} <span style="color: white">{{fix.result.goalsHomeTeam}}</span> <br> {{fix.awayTeamName}} <span style="color: white">{{fix.result.goalsAwayTeam}}</span> </p>
   </div>
   <div ng-hide='completed' ng-repeat='fix in upFix'>
-    <p>{{fix.date | date:'medium'}}</p>
-    <p>{{fix.homeTeamName}} {{fix.result.goalsHomeTeam}} <br> {{fix.awayTeamName}} {{fix.result.goalsAwayTeam}} </p>
+    <p style='color: white'>{{fix.date | date:'medium'}}</p>
+    <p>{{fix.homeTeamName}} <br> Vs. <br> {{fix.awayTeamName}} </p>
   </div>
 </div>
