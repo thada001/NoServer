@@ -1,29 +1,30 @@
 .tableBody {
-  background-color: rgba(30, 30, 30, 0.7);
-  color: #fcf3a1;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  text-decoration: none;
-  font-size: large;
   height: 100%;
-  max-height: 700px;
-  width: 60%;
-  overflow: scroll;
-  display: inline-block;
+  width: 100%;
 }
 .tableBody>h2 {
-  color: #00a9ff;
+  color: #334366;
 }
 body {
   background-image: url(http://i.imgur.com/d9MOxNw.jpg?1);
   background-size: cover;
   background-repeat: no-repeat;
 }
+.tableStuff {
+  background-color: rgba(190, 180, 180, 0.9);
+  color: rgb(40, 50, 40);
+  font-size: large;
+  width: 80%;
+  max-height: 700px;
+  overflow: scroll;
+  display: inline-block;
+}
 .fixtureList {
   background-color: rgba(40, 40, 50, 0.9);
   color: #c16262;
   display: inline-block;
   height: 100%;
-  max-height: 650px;
+  max-height: 700px;
   width: 20%;
   float: right;
   overflow: scroll;
@@ -32,33 +33,37 @@ body {
 #tableHead {
   text-align: center;
 }
-a {
-  color: #00a9ff;
+.teams {
+  color: #334366;
+  font-family: 'Fira Mono', monospace;
+  font-size: 1em;
+  font-weight: bolder;
+  text-shadow: none;
 }
 #labels {
-  color: #969191;
+  color: black;
 }
 button {
--moz-box-shadow:inset 0px 39px 0px -24px #e67a73;
--webkit-box-shadow:inset 0px 39px 0px -24px #e67a73;
-box-shadow:inset 0px 39px 0px -24px #e67a73;
-background-color:#e4685d;
-border:1px solid #ffffff;
-display:inline-block;
-cursor:pointer;
-color:#ffffff;
-font-family:Arial;
-font-size:15px;
-padding:6px 15px;
-text-decoration:none;
-text-shadow:0px 1px 0px #b23e35;
+  -moz-box-shadow:inset 0px 39px 0px -24px #e67a73;
+  -webkit-box-shadow:inset 0px 39px 0px -24px #e67a73;
+  box-shadow:inset 0px 39px 0px -24px #e67a73;
+  background-color:#e4685d;
+  border:1px solid #ffffff;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:15px;
+  padding:6px 15px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #b23e35;
 }
 button:hover {
-background-color:#eb675e;
+  background-color:#eb675e;
 }
 button:active {
-position:relative;
-top:1px;
+  position:relative;
+  top:1px;
 }
 .fixcomp {
   -moz-border-top-left-radius:20px;
@@ -80,7 +85,96 @@ top:1px;
 .fixtureList>div {
   margin: 25px auto;
 }
-.crest {
-  width: 100px;
-  height: 100px;
+/*
+Team View
+*/
+.teamname {
+  text-align: center;
+  margin: 0 auto;
+  font-family: 'Germania One', cursive;
+}
+.teamname>h1 {
+  font-weight: bold;
+  font-size: 4em;
+}
+.tablelink {
+  text-align: center;
+  margin: 0 auto;
+}
+.teamHead {
+  height: 220px;
+  background-color: rgba(150, 160, 170, 0.8);
+}
+.crestL {
+  width: 200px;
+  height: 200px;
+  float: left;
+}
+.crestR {
+  width: 200px;
+  height: 200px;
+  float: right;
+}
+.snf {
+  height: 600px;
+  background-color: rgba(50, 60, 70, 0.9);
+}
+.squad {
+  height: 500px;
+  width: 50%;
+  float: left;
+}
+.squad>h2, .squad>h3, .fixtures>h2 {
+  color: white;
+  text-align: center;
+}
+.fixtures {
+  height: 500px;
+  width: 50%;
+  float: right;
+}
+#playerDiv {
+  width: 100%;
+  font-size: 1.25em;
+  max-height: 300px;
+  overflow: scroll;
+  background-color: rgba(300, 300, 300, 0.8);
+  color: red;
+}
+#flist {
+  width: 100%;
+  font-size: 1.25em;
+  max-height: 300px;
+  overflow: scroll;
+  background-color: rgba(200, 100, 100, 0.8);
+  color: white;
+  text-align: center;
+}
+/*
+Player View
+*/
+.playerHead {
+  height: 220px;
+  background-color: rgba(50, 60, 70, 0.9);
+}
+.playername {
+  text-align: center;
+  margin: 0 auto;
+  font-family: 'Germania One', cursive;
+  color: rgb(150, 150, 150);
+}
+#playerStuff {
+  height: 600px;
+  background-color: rgba(150, 160, 170, 0.8);
+}
+.pinfo {
+  height: 30%;
+  width: 49%;
+  display: inline-block;
+  border: 2px solid black;
+  text-align: center;
+  font-size: 3em;
+}
+.sub {
+  text-decoration: underline;
 }

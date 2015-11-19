@@ -1,3 +1,29 @@
-<a ui-sref='table'>Back to table</a>
-<a ui-sref='team({teamId: playerInfo.team})'>Back to team</a>
-<h1>{{playerInfo.name}}</h1>
+<div class="playerHead">
+  <div class="tablelink">
+    <a ui-sref='table'>Back to Table</a>
+    <a ui-sref='team({teamId: playerInfo.team})'>Back to team</a>
+  </div>
+  <div class="playername">
+    <h1>{{playerInfo.name}}</h1>
+  </div>
+</div>
+<div class='container' id="playerStuff">
+  <div class="pinfo">
+    <span class='sub'>Jersey Number</span><br> {{playerInfo.jerseyNumber}}
+  </div>
+  <div class="pinfo">
+    <span class='sub'>Position</span><br> {{playerInfo.position}}
+  </div>
+  <div class="pinfo">
+    <span class='sub'>Date of Birth</span><br> {{playerInfo.dateOfBirth}}
+  </div>
+  <div class="pinfo">
+    <span class='sub'>Nationality</span><br> {{playerInfo.nationality}}
+  </div>
+  <div class="pinfo">
+    <span class='sub'>Contract Until</span><br> {{playerInfo.contractUntil}}
+  </div>
+  <div class="pinfo">
+    <span class='sub'>Estimated Value</span><br> {{playerInfo.marketValue}}
+  </div>
+</div>
